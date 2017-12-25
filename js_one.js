@@ -54,3 +54,20 @@ function email_Refresh() {
     document.getElementById("results").value = "";
 
 }
+
+
+function array() {
+    var team = [
+        'chelsea',
+        'Manchester',
+        'Liverpool'
+    ]
+
+    for (i = 0; i < team.length;i++){
+        document.write(team[i]+"<br/>");
+     
+    }
+
+}
+
+

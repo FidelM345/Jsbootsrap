@@ -1,0 +1,93 @@
+﻿<!--<script type="text/javascript">
+    try {
+
+        //used to catch only runtime errors(exceptions) and not syntax errors.
+
+        document.write(hello());
+        document.write('Am the beast');
+
+    
+    } catch (e) {
+        document.write('Message = '+e.message+'<br/>');
+        document.write('Description =' + e.description + '<br/>');
+        document.write('Stack Trace =' + e.stack + '<br/>');
+
+    }
+    finally {
+        document.write('Guaranteed to execute');
+    }
+
+
+</script>-->
+
+
+<!--<script type="text/javascript">
+    //customized try-catch messages
+
+    var num1 = Number(prompt("Enter Numerator"));
+    var num2 = Number(prompt("Enter Denomenator"));
+
+
+    try {
+
+        if (num2 == 0) {
+
+            throw {
+                warning:"please enter Zero as the denomenator",
+                danger:"Are you serious BOY"
+            }
+
+
+        } else {
+            var results = num1 / num2;
+
+            document.write(results);
+
+
+        }
+
+
+
+    } catch (e) {
+
+        document.write('Warning = '+e.warning+"<br/>");
+        document.write('Warning = ' + e.danger);
+
+    }
+
+    
+
+
+
+</script>
+    -->
+
+
+<!--<script type="text/javascript">
+    //window.onerror used to catch exception not within the try-catch statement
+
+    window.onerror = function (message,url,line) {
+
+        document.write("Error Message: " + message + "<br/>");
+        document.write("Error Url: " + url + "<br/>");
+        document.write("Error Line: " + line + "<br/>");
+
+    }
+
+     noExist();
+
+
+</script>
+    -->
+
+<script type="text/javascript">
+    //using the HTML on error event handler
+
+    function imgNotloading() {
+
+        alert("the image has not been found in our servers")
+    }
+
+</script>
+
+<img src="uchumi.jpg" onerror="imgNotloading()" alt="The beast"/>

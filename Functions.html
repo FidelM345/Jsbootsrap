@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+
+    <script type="text/javascript">
+
+
+        /*
+        // anonymous function it cannot be hoisted hence must first be declared before its used
+
+        var add = function (num1, num2) {
+            var sum = num1 + num2;
+
+            return sum;
+
+        }
+
+        var result = add(10, 40);
+
+        document.write(result);*/
+
+
+        /*
+        //a closure is a function inside another function. the inner function has access to the outer function's variables and parameters
+
+        function outerFun(num1,num2) {
+            var sentence = "The Result is: ";
+
+            function innerFunc() {
+
+                return sentence + (num1 + num2);
+            }
+
+            return innerFunc();
+
+        }
+
+        var output = outerFun(100, 150);
+        alert(output);
+        */
+
+
+        //using the argument object
+
+        function showArguments() {
+            //the arguments object is only usable within a function's body
+
+            var arg_array = [].slice.call(arguments);//converting arguments into array elements.
+
+
+            document.write(arg_array + "<br/>");//it prints the array elements
+
+            document.write("The argument Count is= " + arguments.length + "<br/>");
+
+            for (var i = 0; i < arguments.length;i++){
+            
+                document.write("Argument " + i + " = " + arguments[i] + "<br/>"); 
+            }
+
+            document.write("<br/>");
+        }
+
+        
+
+
+        showArguments();
+        showArguments("A", "B");
+        showArguments(10,20,30);
+
+
+
+
+    </script>
+
+
+
+</head>
+<body>
+
+
+
+
+
+</body>
+</html>

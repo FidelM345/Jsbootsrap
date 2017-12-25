@@ -1,0 +1,62 @@
+﻿<!--<script type="text/javascript">
+
+    var date = new Date();
+    var custom_date = new Date("January 9, 2001 5:42:55");
+
+    // document.write(custom_date);
+
+
+    var date1 = custom_date.getDate();
+    var month = custom_date.getMonth()+1;
+    var year = custom_date.getFullYear();
+
+
+    if (date1 < 10) {
+
+        date1= "0" + date1;
+
+    }
+
+   
+     if (month < 10) {
+
+                month = "0" + month;
+
+      }
+
+    document.write(date1+"/"+month+"/"+year);
+
+
+
+
+</script>-->
+
+
+<div id="timediv"></div>
+
+<input type="button" value="start" onclick="start_clock()"/>
+<input type="button" value="stop" onclick="stop_clock()" />
+
+
+<script type="text/javascript">
+
+
+    function getTime(){
+        document.getElementById("timediv").innerHTML = new Date();
+    }
+
+    function start_clock() {
+
+       intervalid= setInterval(getTime, 1000);
+
+    }
+   
+    function stop_clock() {
+
+        clearInterval(intervalid);
+
+    }
+
+
+
+</script>
