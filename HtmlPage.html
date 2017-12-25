@@ -1,10 +1,104 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title></title>
-	<meta charset="utf-8" />
+    <title>Js practise1</title>
+    <meta charset="utf-8" />
+
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
+
+
 <body>
+
+    <div class="container">
+        <!--header container-->
+
+        <h1 class="page-header text-primary text-center">
+            Js practise
+        </h1>
+    </div>
+
+
+    <div class="container">
+        <!--text form container-->
+
+
+        <form>
+            <div class="form-group">
+                <label>First NO:</label>
+                <input type="text" placeholder="enter first number" class="form-control" id="num1" />
+
+            </div>
+
+            <div class="form-group">
+                <label>Second NO:</label>
+                <input type="text" placeholder="enter second number" class="form-control" id="num2" />
+
+            </div>
+
+
+            <div class="form-group">
+                <label>Results:</label>
+                <input type="text" placeholder="results will be displayed here" class="form-control" id="results" />
+
+            </div>
+
+            <div class="form-group">
+
+                <input type="button" value="Submit" class="form-control btn-primary" id="button" onclick="addNumbers()" />
+
+            </div>
+
+
+        </form>
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+    <script type="text/javascript" src="js_one.js">
+
+    </script>
+
+
+
+    <script type="text/javascript">
+
+        // alert("i am the javascript beast")//used for displaying an altert box
+
+        // document.getElementById("text").style.backgroundColor = "red"; //used for styling background color of the textbox
+
+
+        var one = "Hello";
+        var two = "world";
+
+        //  alert(one.concat(" ",two," ","practise test")); string cocat() method prctise
+
+       // alert("Uhuru kenyatta said 'i am the best preso' "); using quotations in js
+        // alert('Uhuru kenyatta said \'i am the best preso\' ');
+
+       //  alert(one.toUpperCase());
+        //     alert(one.length); string length
+
+        var name = "Fidel Omolo";
+        var sentence = "A Blue bottle on blue table has a blue liquid in it";
+        //alert(name.replace("Omolo","TheBeast"));
+
+       // alert(sentence.replace(/blue/g, "TheBeast")); global replacement that is case sensitive
+        //  alert(sentence.replace(/blue/gi, "TheBeast"));global replacement that is case insensitive
+
+
+    </script>
 
 </body>
 </html>
