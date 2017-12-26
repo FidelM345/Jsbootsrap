@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+
+    <img src="images/1.jpg" style="width:200px; height:200px" id="image"/> <br/>
+
+    <input type="button" value="start slide" onclick="startSlide()"/>
+    <input type="button" value="stop slide" onclick="stopSlide()"/><br />
+
+    <div id="confirm"></div>
+
+
+    <script type="text/javascript">
+
+        var intervalid;
+
+        function startSlide() {
+
+            intervalid = setInterval(changeImage, 1000);
+
+        }
+
+        function stopSlide() {
+            clearInterval(intervalid);
+        }
+
+        function changeImage() {
+            var imagesrc = document.getElementById("image").getAttribute("src");//it contains.... images/1.jpg
+
+            var imageno = imagesrc.substring(imagesrc.indexOf("/") + 1, imagesrc.indexOf("/") + 2);//used to extract the value...1
+
+            if(imageno==5){
+                imageno =0;
+
+            }
+
+            document.getElementById("confirm").innerHTML = "images/" + (Number(imageno )+ 1) + ".jpg";// the info is displayed in the div tag confirm
+
+            document.getElementById("image").setAttribute("src", "images/"+(Number(imageno )+ 1)+".jpg")
+
+        }
+
+        
+    </script>
+
+    
+</body>
+</html>
