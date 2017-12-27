@@ -4,6 +4,19 @@
     <title></title>
 	<meta charset="utf-8" />
 
+    <style type="text/css">
+
+        .divStyle{
+            display:table-cell;
+            border: 5px solid black;
+            text-align:center;
+            padding:20px;
+        
+        }
+
+    </style>
+
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
@@ -32,10 +45,124 @@
 
     </form>
 
-    
+    <input type="button" value="DOM Event Handler Button" class="btn-default form-control" id="dom"/>
+
+
+   
+
+
 
     <input type="button" value="On Click" onmouseover="this.style.background = 'red'; this.style.color='white'"  
            onmouseout="this.style.background = 'blue'; this.style.color='white'"/>
+
+
+     <input type="button" value="Event Hanlders Using Special Methods" class="btn-success form-control " id="specials" />
+
+
+    <div style="height:100px"></div>
+
+
+    <div class="divStyle" id="DIV 1"> DIV 1
+    
+    <div class="divStyle" id="DIV 2">DIV 2
+
+     <div class="divStyle" id="DIV 3">DIV 3
+
+
+
+     </div>
+
+    </div>
+
+    </div>
+
+    <div style="height:100px"></div>
+
+
+    <script type="text/javascript">
+        // event bubbling
+
+        var divElements = document.getElementsByTagName('div');
+
+        for (i = 0; i < divElements.length; i++) {
+
+             divElements[i].onclick = function (event) {
+               //event object contains info about the events performed e.g onclick, onmouseover
+
+                 event = event || window.event; //only event can be used but to allow older versions to be supported then the window.event is used
+
+                if (event.stopPropagation) {
+                    //used to stop bubbling in recent browsers
+                    event.stopPropagation();
+                }
+                else {
+                    //used to stop bubbling in older browsers
+                     event.cancelable=true
+                }
+
+
+
+
+                this.style.borderColor = 'blue';
+
+                alert(this.getAttribute('id') + " border color has changed");
+
+            }
+        }
+
+
+    </script>
+
+
+
+
+    <script type="text/javascript">
+
+        specials.addEventListener("onclick", changeMouseover);
+        specials.addEventListener("onmouseout", changeMouseout);
+
+        function changeMouseover() {
+            this.style.background = 'red';
+        }
+
+        function changeMouseout() {
+            this.style.background = 'green';
+        }
+
+    </script>
+
+
+
+    <script type="text/javascript">
+
+        //assigning events using DOM properties
+        document.getElementById("dom").onmouseover = changeMouseover;//using named function in DOM
+
+        document.getElementById("dom").onmouseout = function () {
+
+            this.style.background = 'white';
+        }
+
+
+        function changeMouseover() {
+            this.style.background = 'red';
+        }
+
+
+
+    </script>
+
+
+
+    <script type="text/javascript">
+
+
+    </script>
+
+
+
+
+
 
 
     <script type="text/javascript">
@@ -45,7 +172,7 @@
         }
 
 
-
+        // assigning events handlers using HTML attributes
         function validate(controlid) {
             var control = document.getElementById(controlid);
             control.style.color = 'white';
